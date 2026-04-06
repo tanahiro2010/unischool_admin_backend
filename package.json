@@ -1,0 +1,26 @@
+{
+  "name": "member_management_system",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy --minify",
+    "cf-typegen": "wrangler types --env-interface CloudflareBindings",
+    "migrate": "drizzle-kit generate --config drizzle.config.ts && wrangler d1 migrations apply unischool_member_management_system",
+    "migrate:remote": "drizzle-kit generate --config drizzle.config.ts && wrangler d1 migrations apply unischool_member_management_system --remote"
+  },
+  "dependencies": {
+    "@cloudflare/workers-types": "^4.20260301.1",
+    "@hono/zod-validator": "^0.7.6",
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^17.3.1",
+    "drizzle-orm": "^0.45.1",
+    "drizzle-zod": "^0.8.3",
+    "hono": "^4.11.9",
+    "resend": "^6.10.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.31.9",
+    "wrangler": "^4.4.0"
+  }
+}

@@ -44,6 +44,9 @@ class InvitesService {
             subject: "【UniSchool】UniSchoolチームへの招待",
             react: <Invite inviteUrl={inviteUrl} />
         });
+        console.log(result);
+
+        return result;
     }
 }
 
